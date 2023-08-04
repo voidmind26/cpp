@@ -12,10 +12,13 @@ int main() {
     for (int i = 1;i <= n;i++) {
         for (int j = 1;j <= m;j++) {
             cin >> a[i][j];
+            dp[i][j] = 1;
         }
     }
-    for (int i = 1;i <= 0;i++) {
-
+    for (int i = 1;i <= n;i++) {
+        for (int j = 1;j <= m;j++) {
+            if (dp[i][j]>)
+        }
     }
 
     return 0;
