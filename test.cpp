@@ -1,32 +1,26 @@
 #include<iostream>
-#include<vector>
+#include<algorithm>
 using namespace std;
-vector<int>prime;
-
-bool check(int x) {
-    bool res = 1;
-    for (int i = 2;i <= (int)sqrt(x);i++) {
-        if (x % i == 0) {
-            res = 0;
-        }
-    }
-    return res;
-}
-
+const int N = 100;
+int a[N];
+int sum[N];
 int main() {
     int n;
     cin >> n;
-    prime.push_back(1);
-    for (int i = 2;i <= n;i++) {
-        if (check(i)) {
-            prime.push_back(i);
-        }
+    for (int i = 1;i <= n;i++) {
+        cin >> a[i];
     }
-    for (auto i : prime) {
-        for (auto j : prime) {
-            cout << i + j << " ";
+    for (int i = 1;i <= n;i++) {
+        sort(a + 1, a + 1 + i);
+        for (int j = 1;j <= n;j++) {
+            cout << a[j] << " ";
+            sum[j] += a[j];
         }
         cout << endl;
     }
+    for (int i = 1;i <= n;i++) {
+        cout << sum[i] << " ";
+    }
+    cout<<endl;
     return 0;
 }
