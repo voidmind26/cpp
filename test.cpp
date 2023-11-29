@@ -1,20 +1,14 @@
-#include<stdio.h>
-#include<math.h>
-double solve(int a, int b, int c, int dep, int n) {
-	double res = 0;
-	if (n <= 2) {
-		return 0;
-	}
-	res = sqrt(c);
-	if (dep == n) {
-		return res;
-	}
-	return res + solve(b, c, a + b + c, dep + 1, n);
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
 int main() {
-	int n;
-	scanf("%d", &n);
-	double sum = solve(0, 0, 1, 3, n);
-	printf("%lf\n", sum);
-	return 0;
+    int a[14] = { 262,294,349,392,440,466,494,523,587,659,698,784,880,990 };
+
+    int b[5] = { 0,125,200,250,300 };
+    int i;
+    char m[i];
+    scanf("%s", m);
+    printf("%s", m);
+    return 0;
 }

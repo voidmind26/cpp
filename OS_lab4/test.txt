@@ -1,0 +1,11 @@
+help
+fork 1024
+fork 29841
+fork 28491
+list
+kill 3
+kill 1
+list
+kill 2
+list
+exit
