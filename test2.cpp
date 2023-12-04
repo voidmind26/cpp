@@ -2,22 +2,40 @@
 
 using namespace std;
 
+const int N = 2e5 + 7;
+int last[N];
+int a[N];
+int mi[N];
+
 int main() {
     int t;
     cin >> t;
     while (t--) {
-        string a, b;
-        cin >> a >> b;
-        int k;
-        cin >> k;
-        string aft;
-        string tmp;
-        int l = min(a.length(), b.length());
-        int la = a.length();
-        int lb = b.length();
-        for (int i = 1;i <= l;i++) {
-            if (a[])
+        int n;
+        cin >> n;
+        for (int i = 1;i <= n;i++) {
+            mi[i] = 0x7fffffff;
+            last[i] = -1;
+            cin >> a[i];
         }
+        for (int i = 1;i <= n;i++) {
+            if (last[a[i]] == -1) {
+                last[a[i]] = i;
+            }
+            else {
+                mi[a[i]] = min(mi[a[i]], i - last[a[i]] + 1);
+                last[a[i]] = i;
+            }
+        }
+        int ans = 0x7fffffff;
+        for (int i = 1;i <= n;i++) {
+            ans = min(ans, mi[i]);
+        }
+        if (ans == 0x7fffffff) {
+            ans = -1;
+        }
+        cout << ans << "\n";
     }
+
     return 0;
 }
